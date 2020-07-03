@@ -1,0 +1,35 @@
+1. Identify tools that will allow you to do the following:
+
+Scan infrastructure as code templates
+
+twistcli (part of prisma cloud) - https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/prisma-cloud-devops-security/secure-your-infrastructure-automation.html
+AnchoreCLI -  https://github.com/anchore/anchore-cli
+
+2. Example vulnerability
+
+TwistCLI:
+"The twistcli images scan function collects information about the packages and binaries in the container image, and then sends it to Console for analysis.
+Data collected by twistcli includes:
+	Packages in the image.
+	Files installed by each package.
+	Hashes for files in the image.
+After Console analyzes the image for vulnerabilities, twistcli:
+	Outputs a summary report.
+	Exits with a pass or fail return value."
+
+Anchore:
+anchore-cli image vuln docker.io/library/debian:latest os
+
+3. Scan AMI’s or containers for OS vulnerabilities
+AWS Inspector
+
+4. Example vulnerability
+JSON Vulnerabilities: https://nvd.nist.gov/vuln/data-feeds#JSON_FEED
+
+5. Scan an AWS environment for cloud configuration vulnerabilities
+CloudSploit: https://cloudsploit.com/
+
+6. Example vulnerability
+Servers exposed publicly to the internet
+Poor password policies or missing MFA
+

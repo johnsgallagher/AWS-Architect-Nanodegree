@@ -1,0 +1,18 @@
+
+Vulnerability 1
+The InstanceRole IAM role has full access to any s3 bucket instance. They shouldn't have that much access to S3 buckets
+
+Vulnerability  2
+The InstanceRole IAM role is assigned to both RecipeWebServiceInstance and AttackInstance. The access to s3 bucket resources for
+these two instances has to specified by a separate roles with appropriate permissions needed for specific buckets
+
+Vulnerability  3
+WebAppSG has isn't using port 443 for HTTPS.
+
+Vulnerability  4
+WebAppSG, AppLoadBalancerSG, AttackInstanceSG have CIDR as 0.0.0.0/0. This leaves them open to attackers from any IP address
+
+Vulnerability 5
+For the VPC configuration, all the route definitions have DestinationCidrBlock defined as 0.0.0.0/0.
+In case there is a breach into the resource in the subnet configured within this routing table,
+attacker has an option to transfer information to any IP address within VPC or outside of it.
